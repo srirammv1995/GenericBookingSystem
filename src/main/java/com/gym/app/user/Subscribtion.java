@@ -1,6 +1,13 @@
 package com.gym.app.user;
 
 public class Subscribtion {
+	private Long id;
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
 	private boolean isActive = false;
 	private String paidOn;
 	private int numberOfDays;
