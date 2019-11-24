@@ -6,8 +6,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 
 import com.gym.app.user.User;
+import com.gym.app.user.entity.UserEntity;
 
 @Entity
 public class SessionEntity {
@@ -17,7 +20,8 @@ public class SessionEntity {
 	private Long id;
 	private String time;
 	private String usercount;
-	private List<User> users;
+	@ManyToMany
+	private List<UserEntity> users;
 	public String getDate() {
 		return date;
 	}
@@ -42,10 +46,10 @@ public class SessionEntity {
 	public void setUsercount(String usercount) {
 		this.usercount = usercount;
 	}
-	public List<User> getUsers() {
+	public List<UserEntity> getUsers() {
 		return users;
 	}
-	public void setUsers(List<User> users) {
+	public void setUsers(List<UserEntity> users) {
 		this.users = users;
 	}
 }

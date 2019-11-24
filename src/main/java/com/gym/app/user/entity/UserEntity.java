@@ -23,6 +23,7 @@ public class UserEntity {
 	private List<PaymentEntity> payment = new ArrayList<>();
 	@OneToMany
 	private List<TransactionhistoryEntity> history = new ArrayList<>();
+	@OneToOne
 	private SubscribtionEntity subscribtion;
 	@OneToMany
 	private List<SessionHistoryEntity> sessionHistory = new ArrayList<>();
