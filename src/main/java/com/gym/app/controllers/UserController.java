@@ -61,7 +61,6 @@ public class UserController {
 	@DeleteMapping("delete")
 	public UserEntity Deleteuser(@RequestParam String name)
 	{
-		UserEntity userEntity = null;
 		if(name!=null & !name.isEmpty())
 		{
 			userRepo.deleteByName(name);
