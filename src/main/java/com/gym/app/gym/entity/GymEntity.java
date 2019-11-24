@@ -8,13 +8,13 @@ import javax.persistence.OneToMany;
 
 
 @Entity
-public class Gym {
+public class GymEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Long id;
 	private String name;
 	@OneToMany
-	private Session session;
+	private SessionEntity session;
 	public Long getId() {
 		return id;
 	}
@@ -27,10 +27,10 @@ public class Gym {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Session getSession() {
+	public SessionEntity getSession() {
 		return session;
 	}
-	public void setSession(Session session) {
+	public void setSession(SessionEntity session) {
 		this.session = session;
 	}
 }

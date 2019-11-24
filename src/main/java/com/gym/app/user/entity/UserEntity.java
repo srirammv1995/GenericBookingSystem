@@ -11,21 +11,21 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 @Entity
-public class User {
+public class UserEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Long id;
 	private String name;
 	private String password;
 	@OneToOne
-	private Address address;
+	private AddressEntity address;
 	@OneToMany
-	private List<Payment> payment = new ArrayList<>();
+	private List<PaymentEntity> payment = new ArrayList<>();
 	@OneToMany
-	private List<Transactionhistory> history = new ArrayList<>();
-	private Subscribtion subscribtion;
+	private List<TransactionhistoryEntity> history = new ArrayList<>();
+	private SubscribtionEntity subscribtion;
 	@OneToMany
-	private List<SessionHistory> sessionHistory = new ArrayList<>();
+	private List<SessionHistoryEntity> sessionHistory = new ArrayList<>();
 
 	public String getName() {
 		return name;
@@ -43,43 +43,43 @@ public class User {
 		this.password = password;
 	}
 
-	public Address getAddress() {
+	public AddressEntity getAddress() {
 		return address;
 	}
 
-	public void setAddress(Address address) {
+	public void setAddress(AddressEntity address) {
 		this.address = address;
 	}
 
-	public List<Payment> getPayment() {
+	public List<PaymentEntity> getPayment() {
 		return payment;
 	}
 
-	public void setPayment(List<Payment> payment) {
+	public void setPayment(List<PaymentEntity> payment) {
 		this.payment = payment;
 	}
 
-	public List<Transactionhistory> getHistory() {
+	public List<TransactionhistoryEntity> getHistory() {
 		return history;
 	}
 
-	public void setHistory(List<Transactionhistory> history) {
+	public void setHistory(List<TransactionhistoryEntity> history) {
 		this.history = history;
 	}
 
-	public Subscribtion getSubscribtion() {
+	public SubscribtionEntity getSubscribtion() {
 		return subscribtion;
 	}
 
-	public void setSubscribtion(Subscribtion subscribtion) {
+	public void setSubscribtion(SubscribtionEntity subscribtion) {
 		this.subscribtion = subscribtion;
 	}
 
-	public List<SessionHistory> getSessionHistory() {
+	public List<SessionHistoryEntity> getSessionHistory() {
 		return sessionHistory;
 	}
 
-	public void setSessionHistory(List<SessionHistory> sessionHistory) {
+	public void setSessionHistory(List<SessionHistoryEntity> sessionHistory) {
 		this.sessionHistory = sessionHistory;
 	}
 

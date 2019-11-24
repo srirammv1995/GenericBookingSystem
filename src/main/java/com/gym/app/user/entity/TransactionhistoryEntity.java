@@ -8,11 +8,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Transactionhistory {
+public class TransactionhistoryEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Long id;
-	private Payment payment;
+	private PaymentEntity payment;
 	private Long ammount;
 	public Long getId() {
 		return id;
@@ -21,10 +21,10 @@ public class Transactionhistory {
 		this.id = id;
 	}
 	
-	public Payment getPayment() {
+	public PaymentEntity getPayment() {
 		return payment;
 	}
-	public void setPayment(Payment payment) {
+	public void setPayment(PaymentEntity payment) {
 		this.payment = payment;
 	}
 	public Long getAmmount() {

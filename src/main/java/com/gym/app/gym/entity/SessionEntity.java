@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import com.gym.app.user.User;
 
 @Entity
-public class Session {
+public class SessionEntity {
 	private String date;
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
