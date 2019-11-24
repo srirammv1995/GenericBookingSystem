@@ -10,9 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.gym.app.conversionUtils.ConvertToDao;
-import com.gym.app.conversionUtils.ConvertToEntity;
-import com.gym.app.repositories.UserRepository;
 import com.gym.app.services.UserService;
 import com.gym.app.user.User;
 import com.gym.app.user.entity.UserEntity;
