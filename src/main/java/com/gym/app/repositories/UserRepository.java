@@ -9,5 +9,6 @@ import com.gym.app.user.entity.UserEntity;
 @Repository
 public interface UserRepository extends JpaRepository<UserEntity, Long> {
 
-	public User findByName(String name);
+	public UserEntity findByName(String name);
+	public void deleteByName(String name);
 }

@@ -17,7 +17,7 @@ import com.gym.app.user.entity.TransactionhistoryEntity;
 import com.gym.app.user.entity.UserEntity;
 
 public class ConvertToDao {
-	public static User ConvertUserToEntity(UserEntity userEntity) {
+	public static User EntityToUser(UserEntity userEntity) {
 		User user = new User();
 		if(userEntity != null) {
 			user.setId(userEntity.getId());
