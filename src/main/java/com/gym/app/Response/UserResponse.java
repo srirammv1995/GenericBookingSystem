@@ -17,7 +17,7 @@ public class UserResponse {
 		this.operation = operation;
 	}
 	
-	public String UserResponse()
+	public String ReturnUserResponse()
 	{
 		return operation+" Operation Successfully performed on userName"+username;
 	}
