@@ -1,5 +1,7 @@
 package com.gym.app.services;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -35,6 +37,16 @@ public class UserService {
 			userEntity =userRepo.findByName(name);
 		}
 		return ConvertToDao.EntityToUser(userEntity);
+	}
+	
+	public Optional<UserEntity> viewByUserId(@RequestParam Long id)
+	{
+		Optional<UserEntity> userEntity = null;
+		if(id !=null)
+		{
+			userEntity =userRepo.findById(id);
+		}
+		return userEntity;
 	}
 	
 	public UserEntity ModifyTheUser(@RequestBody User user)
