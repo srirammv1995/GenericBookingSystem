@@ -14,14 +14,14 @@ import com.gym.app.user.entity.UserEntity;
 
 @Entity
 public class SessionEntity {
-	private String date;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Long id;
 	private String time;
+	private String date;
 	private String usercount;
-	@ManyToMany
-	private List<UserEntity> users;
+	private List<Long> users;
 	public String getDate() {
 		return date;
 	}
@@ -46,10 +46,10 @@ public class SessionEntity {
 	public void setUsercount(String usercount) {
 		this.usercount = usercount;
 	}
-	public List<UserEntity> getUsers() {
+	public List<Long> getUsers() {
 		return users;
 	}
-	public void setUsers(List<UserEntity> users) {
+	public void setUsers(List<Long> users) {
 		this.users = users;
 	}
 }
