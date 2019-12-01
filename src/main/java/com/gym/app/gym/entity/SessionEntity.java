@@ -1,5 +1,6 @@
 package com.gym.app.gym.entity;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -19,13 +20,13 @@ public class SessionEntity {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Long id;
 	private String time;
-	private String date;
+	private Date date;
 	private String usercount;
 	private List<Long> users;
-	public String getDate() {
+	public Date getDate() {
 		return date;
 	}
-	public void setDate(String date) {
+	public void setDate(Date date) {
 		this.date = date;
 	}
 	public Long getId() {

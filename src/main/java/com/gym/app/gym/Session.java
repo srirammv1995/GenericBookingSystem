@@ -1,19 +1,19 @@
 package com.gym.app.gym;
 
+import java.util.Date;
 import java.util.List;
 
-import com.gym.app.user.User;
 
 public class Session {
-	private String date;
+	private Date date;
 	private Long id;
 	private String time;
 	private String usercount;
-	private List<User> users;
-	public String getDate() {
+	private List<Long> users;
+	public Date getDate() {
 		return date;
 	}
-	public void setDate(String date) {
+	public void setDate(Date date) {
 		this.date = date;
 	}
 	public Long getId() {
@@ -34,10 +34,10 @@ public class Session {
 	public void setUsercount(String usercount) {
 		this.usercount = usercount;
 	}
-	public List<User> getUsers() {
+	public List<Long> getUsers() {
 		return users;
 	}
-	public void setUsers(List<User> users) {
+	public void setUsers(List<Long> users) {
 		this.users = users;
 	}
 }
