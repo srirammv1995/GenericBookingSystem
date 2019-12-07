@@ -22,14 +22,11 @@ public class UserService {
 	
 	public UserEntity createUser(@RequestBody User user) {
 		UserEntity userEntity = null;
-		UserEntity ent = null;
 		if(user != null)
 		{
 			userEntity = ConvertToEntity.ConvertUserToEntity(user);
-			 ent = userRepo.save(userEntity);
-			 ent.setId(userRepo.count());
 		}
-		return ent;
+		return userRepo.save(userEntity);
 	}
 	
 	public User viewByUserName(@RequestParam String name)
