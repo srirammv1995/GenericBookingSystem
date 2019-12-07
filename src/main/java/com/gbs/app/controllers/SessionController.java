@@ -20,19 +20,19 @@ public class SessionController {
 	SessionService sessionService;
 	
 	@PostMapping("create")
-	public SessionEntity createSession(Date date,String time,Long userId)
+	public SessionEntity createSession(String date,String time,Long userId)
 	{
 		return sessionService.createSession(date, time, userId);
 	}
 	
 	@GetMapping("view")
-	public SessionEntity ViewSession(Date date,String time)
+	public SessionEntity ViewSession(String date,String time)
 	{
 		return sessionService.viewSession(date, time);
 	}
 	
 	@DeleteMapping("delete")
-	public SessionEntity deleteSession(Date date,String time,Long userId)
+	public SessionEntity deleteSession(String date,String time,Long userId)
 	{
 		return sessionService.deleteSession(date, time, userId);
 	}

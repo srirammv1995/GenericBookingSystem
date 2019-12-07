@@ -23,7 +23,7 @@ public class SessionService {
 	UserRepository userRepository;
 	
 	
-	public SessionEntity createSession(Date date,String time,Long userId)
+	public SessionEntity createSession(String date,String time,Long userId)
 	{
 		SessionEntity sessionEntity = null;
 		if(date!=null && userId!=null && time!=null)
@@ -47,7 +47,7 @@ public class SessionService {
 	}
 
 
-	public SessionEntity viewSession(Date date, String time) {
+	public SessionEntity viewSession(String date, String time) {
 		SessionEntity sessionEntity = null;
 		if(date!=null  && time!=null)
 		{
@@ -61,7 +61,7 @@ public class SessionService {
 	}
 
 
-	public SessionEntity deleteSession(Date date, String time, Long userId) {
+	public SessionEntity deleteSession(String date, String time, Long userId) {
 		SessionEntity sessionEntity = null;
 		if(date!=null && userId!=null && time!=null)
 		{

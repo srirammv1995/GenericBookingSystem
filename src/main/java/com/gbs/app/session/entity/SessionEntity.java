@@ -21,14 +21,14 @@ public class SessionEntity {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Long id;
 	private String time;
-	private Date date;
+	private String date;
 	private String usercount;
 	@ManyToMany
 	private List<UserEntity> users;
-	public Date getDate() {
+	public String getDate() {
 		return date;
 	}
-	public void setDate(Date date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 	public Long getId() {
