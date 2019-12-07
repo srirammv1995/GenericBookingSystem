@@ -25,13 +25,13 @@ public class SessionController {
 		return sessionService.createSession(date, time, userId);
 	}
 	
-	@GetMapping("create")
+	@GetMapping("view")
 	public SessionEntity ViewSession(Date date,String time)
 	{
 		return sessionService.viewSession(date, time);
 	}
 	
-	@DeleteMapping("create")
+	@DeleteMapping("delete")
 	public SessionEntity deleteSession(Date date,String time,Long userId)
 	{
 		return sessionService.deleteSession(date, time, userId);

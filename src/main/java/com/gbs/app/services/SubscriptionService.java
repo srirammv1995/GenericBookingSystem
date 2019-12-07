@@ -27,10 +27,7 @@ public class SubscriptionService {
 			Optional<UserEntity> userEntityOptional = service.viewByUserId(id);
 			UserEntity userEntity = userEntityOptional.get();
 			user = ConvertToDao.EntityToUser(userEntity);
-			if(user.getSubscribtion()==null)
-			{
-				user.setSubscribtion(subscription);	
-			}
+			user.setSubscribtion(subscription);	
 			userEntity = ConvertToEntity.ConvertUserToEntity(user);
 			service.ModifyTheUser(user);
 		}
