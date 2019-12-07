@@ -9,8 +9,8 @@
 		<version>2.2.1.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.gym</groupId>
-	<artifactId>gym</artifactId>
+	<groupId>com.gbs</groupId>
+	<artifactId>gbsApp</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<name>gym</name>
 	<description>project for Spring Boot</description>
