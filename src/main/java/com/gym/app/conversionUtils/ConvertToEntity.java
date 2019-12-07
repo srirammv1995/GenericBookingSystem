@@ -95,10 +95,23 @@ public class ConvertToEntity {
 			TransactionhistoryEntity entity = new TransactionhistoryEntity();
 			entity.setAmmount(transactionhistory.getAmmount());
 			entity.setId(transactionhistory.getId());
-			entity.getPayment().setCardnumber(transactionhistory.getPayment().getCardnumber());
-			entity.getPayment().setCardType(transactionhistory.getPayment().getCardType());
-			entity.getPayment().setExpiryDate(transactionhistory.getPayment().getExpiryDate());
-			entity.getPayment().setId(transactionhistory.getId());
+			if(transactionhistory.getPayment().getCardnumber()!=null)
+			{
+				entity.getPayment().setCardnumber(transactionhistory.getPayment().getCardnumber());				
+			}
+			if(transactionhistory.getPayment().getCardType()!=null)
+			{
+				entity.getPayment().setCardType(transactionhistory.getPayment().getCardType());	
+			}
+			if(transactionhistory.getPayment().getExpiryDate()!=null)
+			{
+				entity.getPayment().setExpiryDate(transactionhistory.getPayment().getExpiryDate());
+			}
+			if(transactionhistory.getId()!=null)
+			{
+				entity.getPayment().setId(transactionhistory.getId());
+			}
+			
 			entities.add(entity);
 		}
 		return entities;

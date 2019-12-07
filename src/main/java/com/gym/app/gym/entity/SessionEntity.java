@@ -22,7 +22,8 @@ public class SessionEntity {
 	private String time;
 	private Date date;
 	private String usercount;
-	private List<Long> users;
+	@ManyToMany
+	private List<UserEntity> users;
 	public Date getDate() {
 		return date;
 	}
@@ -47,10 +48,10 @@ public class SessionEntity {
 	public void setUsercount(String usercount) {
 		this.usercount = usercount;
 	}
-	public List<Long> getUsers() {
+	public List<UserEntity> getUsers() {
 		return users;
 	}
-	public void setUsers(List<Long> users) {
+	public void setUsers(List<UserEntity> users) {
 		this.users = users;
 	}
 }

@@ -1,5 +1,6 @@
 package com.gym.app.controllers;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,10 +38,10 @@ public class UserController {
 	}
 	
 	@GetMapping("/viewById")
-	public Optional<UserEntity> viewByUserId(@RequestParam Long id)
+	public UserEntity viewByUserId(@RequestParam Long id)
 	{
 	
-		return userService.viewByUserId(id);
+		return userService.viewByUserId(id).get();
 	}
 	
 	@PutMapping("modify")
@@ -56,6 +57,11 @@ public class UserController {
 		
 		return userService.Deleteuser(name);
 		
+	}
+	
+	@GetMapping("all")
+	public List<UserEntity> findall() {
+		return userService.findall();
 	}
 
 }

@@ -1,12 +1,12 @@
 package com.gym.app.user.entity;
 
-import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+
 
 @Entity
 public class TransactionhistoryEntity {
@@ -24,7 +24,10 @@ public class TransactionhistoryEntity {
 	}
 	
 	public PaymentEntity getPayment() {
+		if(payment!=null)
 		return payment;
+		else
+			return new PaymentEntity();
 	}
 	public void setPayment(PaymentEntity payment) {
 		this.payment = payment;
