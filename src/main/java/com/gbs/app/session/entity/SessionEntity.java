@@ -1,5 +1,6 @@
 package com.gbs.app.session.entity;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -43,13 +44,19 @@ public class SessionEntity {
 		this.time = time;
 	}
 	public String getUsercount() {
+		if(usercount!=null)
 		return usercount;
+		else
+		return String.valueOf(0);
 	}
 	public void setUsercount(String usercount) {
 		this.usercount = usercount;
 	}
 	public List<UserEntity> getUsers() {
+		if(users!=null)
 		return users;
+		else
+			return new ArrayList<UserEntity>();
 	}
 	public void setUsers(List<UserEntity> users) {
 		this.users = users;
