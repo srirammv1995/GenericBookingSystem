@@ -12,6 +12,7 @@ import com.gbs.app.repositories.SessionRepository;
 import com.gbs.app.repositories.UserRepository;
 import com.gbs.app.session.Session;
 import com.gbs.app.session.entity.SessionEntity;
+import com.gbs.app.user.entity.SessionHistoryEntity;
 import com.gbs.app.user.entity.UserEntity;
 
 @Service
@@ -37,6 +38,12 @@ public class SessionService {
 			}
 			sessionEntity.setDate(date);
 			sessionEntity.setTime(time);
+			SessionHistoryEntity sessionHistory = new SessionHistoryEntity();
+			sessionHistory.setDate(date);
+			sessionHistory.setTime(time);
+			 userEntity.get().getSessionHistory().add(sessionHistory);
+			 UserEntity newEntity = userEntity.get();
+			userRepository.save(newEntity);
 			repository.save(sessionEntity);
 		}
 		return sessionEntity;
