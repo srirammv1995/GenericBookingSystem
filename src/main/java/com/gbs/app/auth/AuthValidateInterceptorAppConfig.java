@@ -20,8 +20,16 @@ public class AuthValidateInterceptorAppConfig implements WebMvcConfigurer{
 	 @Override
 	   public void addInterceptors(InterceptorRegistry registry) {
 	      List<String> patterns = new ArrayList<String>();
-	      patterns.add("auth/**");
-	      patterns.add("/user/create");
-		registry.addInterceptor(authValidateInterceptor()).addPathPatterns("/**").excludePathPatterns(patterns);
+	      patterns.add("/address/**");
+	      patterns.add("/payment/**");
+	      patterns.add("/session/**");
+	      patterns.add("/subscription/**");
+	      patterns.add("/transaction/**");
+	      patterns.add("/user/viewById");
+	      patterns.add("/user/viewByName");
+	      patterns.add("/user/modify");
+	      patterns.add("/user/delete");
+	      patterns.add("/user/all");
+		registry.addInterceptor(authValidateInterceptor()).addPathPatterns(patterns);
 	   }
 }

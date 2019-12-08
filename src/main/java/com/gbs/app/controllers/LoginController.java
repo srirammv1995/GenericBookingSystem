@@ -1,6 +1,7 @@
 package com.gbs.app.controllers;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,9 +24,9 @@ public class LoginController {
 	LoginService loginService;
 	
 	@PostMapping("login")
-	public UserLogin login(@RequestParam String username,@RequestParam String password,HttpServletRequest httpServletRequest)
+	public UserLogin login(@RequestParam String username,@RequestParam String password)
 	{
-		return loginService.login(username, password,httpServletRequest);
+		return loginService.login(username, password);
 	}
 	
 	@GetMapping("validate")

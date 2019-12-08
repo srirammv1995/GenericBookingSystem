@@ -1,6 +1,5 @@
 package com.gbs.app.services;
 
-import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -23,7 +22,7 @@ public class LoginService {
 	RedisTemplate redisTemplate;
 	
 	@SuppressWarnings("unchecked")
-	public UserLogin login(String username,String password,HttpServletRequest httpServletRequest)
+	public UserLogin login(String username,String password)
 	{
 		UserLogin user = new UserLogin();
 		UserEntity userEntity = userRepository.findByNameAndPassword(username, password);
