@@ -8,15 +8,15 @@ import com.gbs.app.user.entity.UserEntity;
 
 
 public class Session {
-	private Date date;
+	private String date;
 	private Long id;
 	private String time;
 	private String usercount;
 	private List<UserEntity> users;
-	public Date getDate() {
+	public String getDate() {
 		return date;
 	}
-	public void setDate(Date date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 	public Long getId() {
