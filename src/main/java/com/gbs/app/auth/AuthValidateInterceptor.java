@@ -30,14 +30,14 @@ public class AuthValidateInterceptor implements HandlerInterceptor {
 		if (AuthToken != null && !AuthToken.isEmpty()) {
 			Claims claims = JwtUtil.decodeJWT(AuthToken);
 			String token = null;
-			if(claims.getId().equals(userId))
+			if(claims.getId().equals(String.valueOf(userId)))
 			{
 			token = (String) redisTemplate.opsForHash().get(Long.valueOf(claims.getId()), Constants.AUTH_KEY);	
 			}
 			if (token == null || token.isEmpty()) {
 				throw new Exception("JWT token is invalid or expired");
 			}
-			else if(token.equals(AuthToken))
+			else if(!token.equals(AuthToken))
 			{
 				throw new Exception("Authtoken is invalid");
 			}
