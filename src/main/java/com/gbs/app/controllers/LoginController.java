@@ -30,7 +30,7 @@ public class LoginController {
 	}
 	
 	@GetMapping("validate")
-	public Claims login(@RequestParam String token)
+	public Claims validate(@RequestParam String token)
 	{
 		return JwtUtil.decodeJWT(token);
 	}

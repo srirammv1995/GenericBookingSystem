@@ -3,6 +3,7 @@ package com.gbs.app.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,9 +20,9 @@ public class TransactionController {
 	TransactionService service;
 	
 	@PostMapping("create")
-	public User createTransaction(@RequestParam Long id,@RequestBody Payment payment,@RequestParam Long ammount)
+	public User createTransaction(@RequestHeader(value="x-auth-token") String authtoken,@RequestParam(required = false) Long userId,@RequestBody Payment payment,@RequestParam Long ammount)
 	{
-		return service.createTransaction(id, payment, ammount);
+		return service.createTransaction(userId, payment, ammount);
 	}
 
 }

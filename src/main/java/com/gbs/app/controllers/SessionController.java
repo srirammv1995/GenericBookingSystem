@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.gbs.app.services.SessionService;
@@ -20,19 +22,19 @@ public class SessionController {
 	SessionService sessionService;
 	
 	@PostMapping("create")
-	public SessionEntity createSession(String date,String time,Long userId)
+	public SessionEntity createSession(@RequestParam String date,@RequestParam String time,@RequestHeader(value="x-auth-token") String authtoken,@RequestParam(required = false) Long userId)
 	{
 		return sessionService.createSession(date, time, userId);
 	}
 	
 	@GetMapping("view")
-	public SessionEntity ViewSession(String date,String time)
+	public SessionEntity ViewSession(@RequestParam String date,@RequestParam String time)
 	{
 		return sessionService.viewSession(date, time);
 	}
 	
 	@DeleteMapping("delete")
-	public SessionEntity deleteSession(String date,String time,Long userId)
+	public SessionEntity deleteSession(@RequestParam String date,@RequestParam String time,@RequestHeader(value="x-auth-token") String authtoken,@RequestParam(required = false) Long userId)
 	{
 		return sessionService.deleteSession(date, time, userId);
 	}

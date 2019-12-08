@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,27 +22,27 @@ public class SubscriptionController {
 	SubscriptionService subscriptionService;
 	
 	@PostMapping("create")
-	public User createSubscription(@RequestParam Long id,@RequestBody Subscribtion subscribtion)
+	public User createSubscription(@RequestBody Subscribtion subscribtion,@RequestHeader(value="x-auth-token") String authtoken,@RequestParam(required = false) Long userId)
 	{
-		return subscriptionService.createOrUpdateSubscription(id, subscribtion);
+		return subscriptionService.createOrUpdateSubscription(userId, subscribtion);
 	}
 
 	@PutMapping("update")
-	public User updateSubscription(@RequestParam Long id,@RequestBody Subscribtion subscribtion)
+	public User updateSubscription(@RequestBody Subscribtion subscribtion,@RequestHeader(value="x-auth-token") String authtoken,@RequestParam(required = false) Long userId)
 	{
-		return subscriptionService.createOrUpdateSubscription(id, subscribtion);
+		return subscriptionService.createOrUpdateSubscription(userId, subscribtion);
 	}
 	
 	@DeleteMapping("delete")
-	public User deleteSubscription(@RequestParam Long id)
+	public User deleteSubscription(@RequestHeader(value="x-auth-token") String authtoken,@RequestParam(required = false) Long userId)
 	{
-		return subscriptionService.deleteSubscription(id);
+		return subscriptionService.deleteSubscription(userId);
 	}
 	
 	@PutMapping("toggle")
-	public User toggleSubscription(@RequestParam Long id)
+	public User toggleSubscription(@RequestHeader(value="x-auth-token") String authtoken,@RequestParam(required = false) Long userId)
 	{
-		return subscriptionService.toggleSubscription(id);
+		return subscriptionService.toggleSubscription(userId);
 	}
 	
 	

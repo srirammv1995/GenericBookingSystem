@@ -3,6 +3,7 @@ package com.gbs.app.auth;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
@@ -11,11 +12,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Component
 public class AuthValidateInterceptorAppConfig implements WebMvcConfigurer{
 
-	@Bean
-	AuthValidateInterceptor authValidateInterceptor()
-	{
-		return new AuthValidateInterceptor();
-	}
+	@Autowired
+	AuthValidateInterceptor authValidateInterceptor;
 	
 	 @Override
 	   public void addInterceptors(InterceptorRegistry registry) {
@@ -30,6 +28,6 @@ public class AuthValidateInterceptorAppConfig implements WebMvcConfigurer{
 	      patterns.add("/user/modify");
 	      patterns.add("/user/delete");
 	      patterns.add("/user/all");
-		registry.addInterceptor(authValidateInterceptor()).addPathPatterns(patterns);
+		registry.addInterceptor(authValidateInterceptor).addPathPatterns(patterns);
 	   }
 }
