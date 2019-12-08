@@ -1,5 +1,7 @@
 package com.gbs.app.controllers;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,16 +16,16 @@ import com.gbs.app.user.UserLogin;
 import io.jsonwebtoken.Claims;
 
 @RestController
-@RequestMapping("user")
+@RequestMapping("auth")
 public class LoginController {
 	
 	@Autowired
 	LoginService loginService;
 	
 	@PostMapping("login")
-	public UserLogin login(@RequestParam String username,@RequestParam String password)
+	public UserLogin login(@RequestParam String username,@RequestParam String password,HttpServletRequest httpServletRequest)
 	{
-		return loginService.login(username, password);
+		return loginService.login(username, password,httpServletRequest);
 	}
 	
 	@GetMapping("validate")
