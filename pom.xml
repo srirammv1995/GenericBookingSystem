@@ -12,7 +12,7 @@
 	<groupId>com.gbs</groupId>
 	<artifactId>gbsApp</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
-	<name>gym</name>
+	<name>gbs</name>
 	<description>project for Spring Boot</description>
 
 	<properties>
